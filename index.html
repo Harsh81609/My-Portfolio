@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="all.min.css" />
+    <link rel="stylesheet" href="svg-with-js.min.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: black;
+        color: white;
+        background-image: url(bg-2.jpg);
+        background-size: cover;
+        background-position: right;
+        background-repeat: no-repeat;
+      }
+
+      header{
+        position: fixed;
+        width: 100%;
+        z-index: 1;
+        top: 0;
+      }
+
+      .navbar {
+        background-color: transparent;
+        font-family: cursive;
+        padding: 10px;
+        border: 0.5px solid white;
+        border-radius: 8px;
+        backdrop-filter: blur(20px);
+      }
+
+      .navbar ul {
+        list-style: none;
+        overflow: auto;
+        padding: 5px;
+        margin: 0;
+      }
+
+      .logo {
+        float: left;
+        padding: 3px 40px;
+      }
+
+      .logo a {
+        text-decoration: none;
+        font-size: 23px;
+        font-weight: bold;
+        padding: 3px;
+      }
+
+      .navbar li {
+        float: right;
+        padding: 0 10px;
+        font-size: 18px;
+      }
+
+      .navbar li a {
+        text-decoration: none;
+        color: white;
+        padding: 5px;
+        margin: 5px;
+      }
+
+      a:hover:not(.logo-item) {
+        text-decoration: none;
+        background-color: rgba(3, 207, 221, 0.37);
+        color: whitesmoke;
+        border-radius: 8px;
+      }
+
+      .s-logo {
+        background-color: white;
+        border-radius: 8px;
+        width: 35px;
+        height: 35px;
+        padding: 5px;
+        margin: 5px;
+      }
+
+      .contact {
+        display: flex;
+      }
+
+      .contact a {
+        text-decoration: none;
+        font-size: 20px;
+        color: white;
+      }
+
+      #Languages img {
+        background-color: white;
+        border-radius: 8px;
+        width: 40px;
+        height: 35px;
+        padding: 5px;
+        margin: 5px;
+      }
+
+      .lang{
+        display: flex;
+        font-size: 20px;
+      }
+
+      #Languages p{
+        color: white;
+      }
+
+      #About p{
+        letter-spacing: 5px;
+        word-wrap: wrap;
+        white-space: no-wrap;
+        color: white;
+        background-color: transparent;
+        box-shadow: 2px 2px 10px white;
+        backdrop-filter: blur(30px);
+        /* border: 1px solid rgb(29, 27, 27); */
+        border-radius: 8px;
+        margin: 25px;
+        padding: 8px;
+      }
+
+      #About{
+        margin: 10px;
+        padding: 10px;
+      }
+
+      h2{
+        margin: 5px;
+        padding: 7px;
+        font-size: 30px;
+        font-family: monospace;
+      }
+/* 
+      #Languages{
+        background-image: #000;
+        box-shadow: 0.5px 0.5px 10px;
+        margin: 10px;
+        padding: 7px;
+      } */
+
+      #Languages, #Projects, #About, #Contact{
+        margin: 10px;
+        padding: 10px;
+        position: relative;
+        animation-duration: 5s;
+      }
+
+      #Languages{
+        animation-name: left-animation;
+      }
+
+      #Projects{
+        animation-name: right-animation;
+      }
+
+      #About{
+        animation-name: top-animation;
+      }
+      
+      #Contact{
+        animation-name: bottom-animation;
+      }
+
+      .container{
+        margin-top: 65px;
+        padding: 10px;
+        display: flex;
+      }
+
+      .container .section{
+        float: left;
+        justify-content: center;
+        text-align: center;
+        margin: 100px 5px 5px 5px;
+        padding: 10px;
+        width: 50%;
+        font-size: 20px;
+        position: relative;
+        animation-name: left-animation;
+        animation-duration: 5s;
+      }
+
+      .container .img-webmen{
+        margin: 10px;
+        padding: 10px;
+        width: 50%;
+        position: relative;
+        animation-name: right-animation;
+        animation-duration: 5s;
+      }
+
+      .container .img-webmen img{
+        width: 80vh;
+        height: 60vh;
+        float: right;
+        justify-content: center;
+        text-align: right;
+      }
+
+      @keyframes left-animation{
+        from{
+          left: -2000px;
+        }
+        to{
+          left: 0;
+        }
+      }
+
+      @keyframes right-animation{
+        from{
+          right: -2000px;
+        }
+        to{
+          right: 0;
+        }
+      }
+
+      @keyframes top-animation{
+        from{
+          top: -2000px;
+        }
+        to{
+          top: 0;
+        }
+      }
+
+      @keyframes bottom-animation{
+        from{
+          bottom: -2000px;
+        }
+        to{
+          bottom: 0;
+        }
+      }
+
+      #Projects .p-1, .p-2{
+        margin: 5px;
+        padding: 7px;
+        text-align: left;
+      }
+
+      #Projects img{
+        border: 1px solid white;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar start's here -->
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <a href="#" class="logo-item" style="color: white">MY</a>
+          <a href="#" class="logo-item" style="color: darkgrey"> PORTFOLIO</a>
+        </div>
+        <ul>
+          <li><a href="#Contact">Contact Me</a></li>
+          <li><a href="#Languages">Languages</a></li>
+          <li><a href="#Projects">Projects</a></li>
+          <li><a href="#About">About Me</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Navbar end here  -->
+
+    <div class="container">
+      <div class="section">
+        <h1>Hi, I am Harsh Sinroja</h1>
+        <p>I am a Full Stack Web-Developer.</p>
+      </div>
+      <div class="img-webmen">
+        <img src="webinar-concept-with-man-desk.png" alt="Animated-img">
+      </div>
+    </div>
+
+    <!-- About -->
+    <div id="About">
+      <h2>About Me</h2>
+      <p>As a motivated and detail-oriented student pursuing a degree in
+        BCA at Udhna academy, I am eager to apply my passion for web
+        development to an internship position. With a solid foundation in
+        HTML, CSS, and JavaScript, as well as experience with front-end
+        frameworks like Bootstrap. I am equipped to contribute effectively
+        to innovative projects. I have honed my problem-solving skills and
+        demonstrated my ability to work collaboratively in a team
+        environment. I am eager to further develop my skills and gain
+        practical experience in web development through hands-on
+        opportunities.
+        </p>
+    </div>
+
+    <!-- Languages  -->
+    <div id="Languages">
+      <h2>Languages that I know</h2>
+      <div class="lang">
+        <img src="html5.svg" alt="HTML5" /><p> - HTML5</p>
+      </div>
+
+      <div class="lang">
+        <img src="css3-alt.svg" alt="CSS3" /><p> - CSS3</p>
+      </div>
+
+      <div class="lang">
+        <img src="js.svg" alt="JavaScript" /><p> - JavaScript</p>
+      </div>
+
+      <div class="lang">
+        <img src="jquery.svg" alt="jQuery" /><p> - jQuery</p>
+      </div>
+      <div class="lang">
+        <img src="json.svg" alt="JSON" /><p> - JSON</p>
+      </div>
+      <div class="lang">
+        <img src="wordpress.svg" alt="Wordpress" /><p> - Wordpress</p>
+      </div>
+      <!-- <div class="lang">
+        <img src="react.svg" alt="React" /><p> - React</p>
+      </div> -->
+      <!-- <div class="lang">
+        <img src="node-js.svg" alt="Node js" /><p> - Node Js</p>
+      </div> -->
+      <div class="lang">
+        <img src="python.svg" alt="Pyhton" /><p> - Python</p>
+      </div>
+      <div class="lang">
+        <img src="xml.svg" alt="XML" /><p> - XML</p>
+      </div>
+      <div class="lang">
+        <img src="database.svg" alt="SQL" /><p> - SQL</p>
+      </div>
+      <div class="lang">
+        <img src="database.svg" alt="Sqlite" /><p> - Sqlite</p>
+      </div>
+      <!-- <div class="lang">
+        <img src="database.svg" alt="MogoDB" /><p> - MogoDB</p>
+      </div> -->
+    </div>
+
+    <!-- Projects  -->
+    <div id="Projects">
+      <h2>My Projects</h2>
+      <div class="p-1">
+        <h1>A E-commmerce website</h1>
+        <a class="p-btn" href="https://harsh81609.github.io/E-commerce-website/"><img src="e-commerce.PNG" alt="e-commerce" width="800px" height="300px"></a>
+      </div>
+      <div class="p-2">
+        <h1>A static pharmacy website</h1>
+        <a class="p-btn" href="https://harsh81609.github.io/Static-pharmacy-website/"><img src="static-website.PNG" alt="static-website" width="800px" height="300px"></a>
+      </div>
+    </div>
+
+    <!-- Contact  -->
+    <div id="Contact">
+      <h2>Contact Me</h2>
+      <div class="contact">
+        <img class="s-logo" src="linkedin-in.svg" />
+        <p>- <a href="https://www.linkedin.com/in/sinroja-harsh-b8ab2b280">Sinroja Harsh</a></p>
+        <br />
+      </div>
+      <div class="contact">
+        <img class="s-logo" src="github.svg" />
+        <p>- <a href="https://github.com/Harsh81609">Sinroja Harsh</a></p>
+        <br />
+      </div>
+      <div class="contact">
+        <img class="s-logo" src="envelope.svg" />
+        <p>- <a href="">sinrojaharsh@gmail.com</a></p>
+        <br />
+      </div>
+      <div class="contact">
+        <img class="s-logo" src="instagram.svg" />
+        <p>- <a href="https://www.instagram.com/harsh_sinroja?igsh=aGEyNTF0aXhrZXhw">harsh_sinorja</a></p>
+        <br />
+      </div>
+    </div>
+    <script>
+      document.querySelectorAll('nav a').forEach(anchor =>{
+        anchor.addEventListener('click', function(e){
+          e.preventDefault();
+          const targetId= this.getAttribute('href').substring(1);
+          const targetElement= document.getElementById(targetId);
+
+          window.scrollTo({
+            top: targetElement.offsetTop,
+            behavior:'smooth'
+          })
+        })
+      })
+    </script>
+  </body>
+</html>
