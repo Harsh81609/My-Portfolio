@@ -148,7 +148,9 @@ h2 {
   margin: 10px;
   padding: 10px;
   position: relative;
-  animation-duration: 5s;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
+
 }
 
 #Languages  {
@@ -171,11 +173,11 @@ h2 {
   color: skyblue;
 }
 
-.name{
+.container .section  .name{
   animation-name: nameslider;
   animation-duration: 3s;
-  animation-timing-function: ease;
-  animation-iteration-count: infinite;
+  /* animation-timing-function: ease-in; */
+  /* animation-iteration-count: infinite;*/
 }
 
 #Projects object{
@@ -224,43 +226,53 @@ h2 {
 
 @keyframes left-animation {
   from {
-    left: -2000px;
+    opacity: 0;
+    transform: translateX(300px);
   }
   to {
-    left: 0;
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
 @keyframes right-animation {
   from {
-    right: -2000px;
+    opacity: 0;
+    transform: translateX(-300px);
   }
   to {
-    right: 0;
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
 @keyframes top-animation {
   from {
-    top: -2000px;
+    opacity: 0;
+    transform: translateY(300px);
   }
   to {
-    top: 0;
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @keyframes bottom-animation {
   from {
-    bottom: -2000px;
+    opacity: 0;
+    transform: translateY(-100px);
   }
   to {
-    bottom: 0;
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @keyframes namesilder {
   from{
+    opacity: 0;
     width: 0%;
+    transition: 3s width;
   }
   to{
     width: 100%;
@@ -381,4 +393,16 @@ h2 {
     flex-direction: column;
     float: none;
   }
+}
+
+footer{
+  height: 30px;
+  width: 100%;
+  text-align: center;
+  background-color: transparent;
+  color: white;
+  padding-top: 13px;
+  border: 2px solid white;
+  border-radius: 10px;
+  backdrop-filter: blur(30px);
 }
